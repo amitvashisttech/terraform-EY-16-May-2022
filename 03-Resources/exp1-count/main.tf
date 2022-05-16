@@ -5,15 +5,15 @@ provider "azurerm" {
 
 # Create a resource group
 resource "azurerm_resource_group" "example" {
-  name     = "Blue-RG"
+  count = 2 
+  name     = "Blue-RG-${count.index + 1 }"
   location = "eastus"
-}
 
-
-/*
-# Create a resource group
-resource "azurerm_resource_group" "green" {
-  name     = "Green-RG"
-  location = "eastus"
+tags = { 
+   Owner = "Amit Vashist"
+   Team  = "DevOps Team"
+   Project = "Terraform Automation" 
+ 
+ }
+ 
 }
-*/
