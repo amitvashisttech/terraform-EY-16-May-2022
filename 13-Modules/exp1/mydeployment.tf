@@ -13,7 +13,6 @@ module "mynetwork" {
   my_vm_count = 2 
 }
 
-
 module "compute" { 
   source = "./modules/compute"
   my_rg_name = "devops"
@@ -21,3 +20,4 @@ module "compute" {
   my_vm_count = 2 
   my_nic_id   = module.mynetwork.my_nic
 }
+
